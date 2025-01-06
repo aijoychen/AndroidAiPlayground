@@ -21,6 +21,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.security.InvalidParameterException
 
+@Suppress("DEPRECATION")
+@SuppressLint("QueryPermissionsNeeded")
 class MainActivity : AppCompatActivity() {
     private val recyclerView: RecyclerView by lazy { findViewById(R.id.recycler_view) }
 
@@ -98,9 +100,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun getSortedChildren(): List<Item> {
-            return children!!.values.sortedWith(Comparator { o1, o2 ->
+            return children!!.values.sortedWith { o1, o2 ->
                 o1.name.compareTo(o2.name)
-            })
+            }
         }
 
         fun showDetail(context: Context) {
@@ -179,7 +181,7 @@ class MainActivity : AppCompatActivity() {
             holder.bind(item)
         }
 
-        class ItemViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
+        class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             private val text1: TextView =
                 itemView.findViewById(android.R.id.text1)
 

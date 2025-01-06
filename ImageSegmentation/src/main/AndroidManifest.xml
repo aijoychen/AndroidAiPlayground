@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:screenOrientation="portrait">
+        <activity
+            android:name=".activities.Deeplabv3TfLiteActivity"
+            android:exported="false"
+            android:label="Deeplabv3-tflite">
+            <intent-filter>
+                <action android:name="aijoy.intent.action.DEMO" />
+            </intent-filter>
+            <meta-data
+                android:name="path"
+                android:value="ImageSegmentation" />
+        </activity>
+    </application>
+</manifest>

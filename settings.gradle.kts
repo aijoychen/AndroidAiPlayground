@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidAiPlayground"
 include(":app")
- 
+include(":ImageSegmentation")
